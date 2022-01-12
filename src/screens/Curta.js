@@ -10,17 +10,17 @@ import {
   ScrollView,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { filmes } from '../data/filmes';
+import { curtas } from '../data/curtas';
 
-const Novidade = () => {
+const Curta = () => {
   return (
     <ScrollView>
       <SafeAreaView style={styles.container}>
-        <Text style={styles.texto}>Originais</Text>
+        <Text style={styles.texto}>Curtas</Text>
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
-          data={filmes}
+          data={curtas}
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => Alert.alert('Cartaz Selecionado', item.nome)}
@@ -35,7 +35,7 @@ const Novidade = () => {
   );
 };
 
-export default Novidade;
+export default Curta;
 
 const styles = StyleSheet.create({
   container: {

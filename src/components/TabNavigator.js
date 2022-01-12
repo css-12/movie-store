@@ -6,6 +6,8 @@ import { Ionicons } from '@expo/vector-icons';
 import Login from '../screens/Login';
 import Home from '../screens/Home';
 import Novidade from '../screens/Novidade';
+import Serie from '../screens/Serie';
+import Curta from '../screens/Curta';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +36,19 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
+        name="Originais"
+        component={Novidade}
+        options={{
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'chatbox' : 'chatbox-outline'}
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Home"
         component={Home}
         options={{
@@ -55,8 +70,21 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Lançamento"
-        component={Novidade}
+        name="Séries"
+        component={Serie}
+        options={{
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'chatbox' : 'chatbox-outline'}
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Curtas"
+        component={Curta}
         options={{
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
