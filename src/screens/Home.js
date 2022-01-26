@@ -18,14 +18,14 @@ const Home = ({ navigation }) => {
   return (
     <ScrollView>
       <SafeAreaView style={styles.container}>
-        <Text style={styles.texto}>Originais</Text>
+        <Text style={styles.texto}>Filmes</Text>
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
           data={filmes}
           renderItem={({ item }) => (
             <TouchableOpacity
-              onPress={() => Alert.alert('Cartaz Selecionado', item.nome)}
+              onPress={() => Alert.alert('Filme Selecionado', item.nome)}
             >
               <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
             </TouchableOpacity>
@@ -40,7 +40,7 @@ const Home = ({ navigation }) => {
           data={series}
           renderItem={({ item }) => (
             <TouchableOpacity
-              onPress={() => Alert.alert('Cartaz Selecionado', item.nome)}
+              onPress={() => Alert.alert('Série Selecionada', item.nome)}
             >
               <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
             </TouchableOpacity>
@@ -54,7 +54,7 @@ const Home = ({ navigation }) => {
           data={curtas}
           renderItem={({ item }) => (
             <TouchableOpacity
-              onPress={() => Alert.alert('Cartaz Selecionado', item.nome)}
+              onPress={() => Alert.alert('Curta Selecionado', item.nome)}
             >
               <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
             </TouchableOpacity>

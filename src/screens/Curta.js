@@ -11,19 +11,51 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { curtas } from '../data/curtas';
+import { curtasa } from '../data/curtasa';
+import { curtasl } from '../data/curtasl';
 
 const Curta = () => {
   return (
     <ScrollView>
       <SafeAreaView style={styles.container}>
-        <Text style={styles.texto}>Curtas</Text>
+        <Text style={styles.texto}>Originais</Text>
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
           data={curtas}
           renderItem={({ item }) => (
             <TouchableOpacity
-              onPress={() => Alert.alert('Cartaz Selecionado', item.nome)}
+              onPress={() => Alert.alert('Curta Selecionado', item.nome)}
+            >
+              <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
+            </TouchableOpacity>
+          )}
+          ItemSeparatorComponent={() => <View style={styles.espaco} />}
+        />
+
+        <Text style={styles.texto}>Animados</Text>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={curtasa}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() => Alert.alert('Curta Selecionado', item.nome)}
+            >
+              <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
+            </TouchableOpacity>
+          )}
+          ItemSeparatorComponent={() => <View style={styles.espaco} />}
+        />
+
+        <Text style={styles.texto}>Live Action</Text>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={curtasl}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() => Alert.alert('Curta Selecionado', item.nome)}
             >
               <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
             </TouchableOpacity>

@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { filmes } from '../data/filmes';
+import { filmesm } from '../data/filmesm';
+import { filmesc } from '../data/filmesc';
 
 const Novidade = () => {
   return (
@@ -23,7 +25,37 @@ const Novidade = () => {
           data={filmes}
           renderItem={({ item }) => (
             <TouchableOpacity
-              onPress={() => Alert.alert('Cartaz Selecionado', item.nome)}
+              onPress={() => Alert.alert('Filme Selecionado', item.nome)}
+            >
+              <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
+            </TouchableOpacity>
+          )}
+          ItemSeparatorComponent={() => <View style={styles.espaco} />}
+        />
+
+        <Text style={styles.texto}>Musicais</Text>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={filmesm}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() => Alert.alert('Filme Selecionado', item.nome)}
+            >
+              <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
+            </TouchableOpacity>
+          )}
+          ItemSeparatorComponent={() => <View style={styles.espaco} />}
+        />
+
+        <Text style={styles.texto}>Comédias</Text>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={filmesc}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() => Alert.alert('Filme Selecionado', item.nome)}
             >
               <Image style={styles.imagem} source={{ uri: item.imgUrl }} />
             </TouchableOpacity>
